@@ -1,0 +1,84 @@
+/*
+* responsive.css - 响应式设计
+* 作用：使网站在不同屏幕尺寸上都能正常显示
+*/
+
+/* 中等屏幕（平板）样式 */
+@media (max-width: 992px) {
+    /* 横幅区域在小屏幕上改为垂直排列 */
+    .banner {
+        flex-direction: column; /* 垂直方向排列 */
+        text-align: center; /* 文字居中 */
+    }
+    
+    /* 调整横幅文字区域样式 */
+    .banner-text {
+        padding-right: 0; /* 去掉右侧内边距 */
+        margin-bottom: 30px; /* 底部外边距 */
+    }
+    
+    /* 调整商品网格列数 */
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 每列最小250px */
+    }
+}
+
+/* 小屏幕（大手机）样式 */
+@media (max-width: 768px) {
+    /* 在小屏幕上隐藏导航菜单 */
+    .nav ul {
+        display: none; /* 隐藏导航菜单 */
+    }
+    
+    /* 调整横幅标题大小 */
+    .banner-text h1 {
+        font-size: 28px; /* 字体大小 */
+    }
+    
+    /* 购物车侧边栏在小屏幕上占满全屏 */
+    .cart-sidebar {
+        width: 100%; /* 宽度100% */
+        right: -100%; /* 初始位置在屏幕右侧外部 */
+    }
+    
+    /* 调整商品网格列数 */
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* 每列最小220px */
+    }
+    
+    /* 调整搜索框宽度 */
+    #search-input {
+        width: 150px; /* 宽度150px */
+    }
+}
+
+/* 超小屏幕（小手机）样式 */
+@media (max-width: 576px) {
+    /* 调整横幅内边距 */
+    .banner {
+        padding: 25px; /* 内边距 */
+    }
+    
+    /* 商品网格改为单列显示 */
+    .product-grid {
+        grid-template-columns: 1fr; /* 单列显示 */
+    }
+    
+    /* 商品筛选按钮容器允许水平滚动 */
+    .product-filters {
+        justify-content: flex-start; /* 左对齐 */
+        overflow-x: auto; /* 水平方向滚动 */
+        white-space: nowrap; /* 禁止换行 */
+        padding-bottom: 10px; /* 底部内边距 */
+    }
+    
+    /* 调整头部图标间距 */
+    .header-icons {
+        gap: 10px; /* 间距10px */
+    }
+    
+    /* 调整搜索框宽度 */
+    #search-input {
+        width: 120px; /* 宽度120px */
+    }
+}

@@ -1,0 +1,155 @@
+/*
+* products.css - 商品区域样式
+* 作用：设置商品展示区域的样式
+*/
+
+/* 商品区域整体样式 */
+.products {
+    margin: 50px 0; /* 上下外边距 */
+}
+
+/* 商品区域标题样式 */
+.products h2 {
+    font-size: 32px; /* 字体大小 */
+    margin-bottom: 30px; /* 底部外边距 */
+    text-align: center; /* 文字居中 */
+    color: #333; /* 字体颜色 */
+}
+
+/* 商品筛选按钮容器 */
+.product-filters {
+    display: flex; /* 弹性布局 */
+    justify-content: center; /* 水平居中 */
+    margin-bottom: 40px; /* 底部外边距 */
+    flex-wrap: wrap; /* 允许换行 */
+}
+
+/* 筛选按钮样式 */
+.filter-btn {
+    background: white; /* 白色背景 */
+    border: 1px solid #ddd; /* 边框 */
+    padding: 10px 20px; /* 内边距 */
+    margin: 0 5px 10px; /* 外边距 */
+    border-radius: 30px; /* 圆角，胶囊形状 */
+    cursor: pointer; /* 鼠标悬停时变为手型 */
+    font-weight: 500; /* 字体粗细 */
+    transition: all 0.3s; /* 所有属性过渡效果 */
+}
+
+/* 筛选按钮悬停和激活状态 */
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #4a6cf7; /* 背景色变为蓝色 */
+    color: white; /* 字体颜色变为白色 */
+    border-color: #4a6cf7; /* 边框颜色变为蓝色 */
+}
+
+/* 商品网格容器 */
+.product-grid {
+    display: grid; /* 网格布局 */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 自动填充列，每列最小300px */
+    gap: 30px; /* 网格间距 */
+}
+
+/* 单个商品卡片样式 */
+.product-card {
+    background-color: white; /* 白色背景 */
+    border-radius: 10px; /* 圆角 */
+    overflow: hidden; /* 超出部分隐藏 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* 阴影效果 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 变换和阴影过渡效果 */
+}
+
+/* 商品卡片悬停效果 */
+.product-card:hover {
+    transform: translateY(-10px); /* 向上移动10px */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* 阴影加深 */
+}
+
+/* 商品图片区域样式 */
+.product-image {
+    position: relative; /* 相对定位，用于定位标签 */
+    height: 200px; /* 固定高度 */
+    overflow: hidden; /* 超出部分隐藏 */
+}
+
+/* 商品图片样式 */
+.product-image img {
+    width: 100%; /* 宽度100% */
+    height: 100%; /* 高度100% */
+    object-fit: cover; /* 保持比例，填充整个区域 */
+    transition: transform 0.5s; /* 变换过渡效果 */
+}
+
+/* 商品卡片悬停时图片放大效果 */
+.product-card:hover .product-image img {
+    transform: scale(1.1); /* 放大1.1倍 */
+}
+
+/* 商品标签样式（热卖、新品、特价等） */
+.product-tag {
+    position: absolute; /* 绝对定位 */
+    top: 15px; /* 距离顶部15px */
+    right: 15px; /* 距离右侧15px */
+    background-color: #ff4757; /* 红色背景 */
+    color: white; /* 白色文字 */
+    padding: 5px 10px; /* 内边距 */
+    border-radius: 4px; /* 圆角 */
+    font-size: 12px; /* 字体大小 */
+    font-weight: bold; /* 字体加粗 */
+}
+
+/* 商品信息区域样式 */
+.product-info {
+    padding: 20px; /* 内边距 */
+}
+
+/* 商品标题样式 */
+.product-title {
+    font-size: 20px; /* 字体大小 */
+    margin-bottom: 10px; /* 底部外边距 */
+    color: #333; /* 字体颜色 */
+}
+
+/* 商品描述样式 */
+.product-desc {
+    color: #777; /* 字体颜色 */
+    font-size: 14px; /* 字体大小 */
+    margin-bottom: 15px; /* 底部外边距 */
+    height: 40px; /* 固定高度 */
+    overflow: hidden; /* 超出部分隐藏 */
+}
+
+/* 商品价格样式 */
+.product-price {
+    font-size: 24px; /* 字体大小 */
+    font-weight: bold; /* 字体加粗 */
+    color: #4a6cf7; /* 蓝色字体 */
+    margin-bottom: 15px; /* 底部外边距 */
+}
+
+/* 商品原价样式（用于显示打折前的价格） */
+.original-price {
+    font-size: 16px; /* 字体大小 */
+    color: #999; /* 灰色字体 */
+    text-decoration: line-through; /* 删除线 */
+    margin-left: 10px; /* 左侧外边距 */
+}
+
+/* 加入购物车按钮样式 */
+.add-to-cart {
+    width: 100%; /* 宽度100% */
+    background-color: #4a6cf7; /* 蓝色背景 */
+    color: white; /* 白色文字 */
+    border: none; /* 去掉边框 */
+    padding: 12px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时变为手型 */
+    font-weight: 600; /* 字体粗细 */
+    transition: background-color 0.3s; /* 背景色过渡效果 */
+}
+
+/* 加入购物车按钮悬停效果 */
+.add-to-cart:hover {
+    background-color: #3a5ce5; /* 背景色变深 */
+}

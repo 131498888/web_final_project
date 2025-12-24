@@ -1,0 +1,34 @@
+/*
+* notification.css - 通知样式
+* 作用：设置提示通知的样式
+*/
+
+/* 通知整体样式 */
+.notification {
+    position: fixed; /* 固定定位 */
+    top: 20px; /* 距离顶部20px */
+    right: 20px; /* 距离右侧20px */
+    padding: 15px 25px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    color: white; /* 白色文字 */
+    font-weight: 600; /* 字体加粗 */
+    z-index: 2000; /* 设置层级，确保在最上层 */
+    transform: translateX(150%); /* 初始位置在屏幕右侧外部 */
+    transition: transform 0.3s ease; /* 位置变换过渡效果 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+}
+
+/* 通知显示状态 */
+.notification.show {
+    transform: translateX(0); /* 移动到正常位置 */
+}
+
+/* 成功通知样式 */
+.notification.success {
+    background-color: #2ed573; /* 绿色背景 */
+}
+
+/* 错误通知样式 */
+.notification.error {
+    background-color: #ff4757; /* 红色背景 */
+}

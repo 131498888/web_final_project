@@ -1,0 +1,56 @@
+/*
+* banner.css - 横幅区域样式
+* 作用：设置主页顶部大横幅的样式
+*/
+
+/* 横幅区域整体样式 */
+.banner {
+    display: flex; /* 弹性布局 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: space-between; /* 子元素在主轴上两端对齐 */
+    background: linear-gradient(135deg, #f5f7ff 0%, #eef1ff 100%); /* 渐变背景 */
+    border-radius: 10px; /* 圆角 */
+    padding: 40px; /* 内边距 */
+    margin: 30px 0; /* 上下外边距 */
+}
+
+/* 横幅文字区域样式 */
+.banner-text {
+    flex: 1; /* 占据剩余空间 */
+    padding-right: 30px; /* 右侧内边距 */
+}
+
+/* 横幅标题样式 */
+.banner-text h1 {
+    font-size: 36px; /* 字体大小 */
+    margin-bottom: 15px; /* 底部外边距 */
+    color: #333; /* 字体颜色 */
+}
+
+/* 横幅描述文字样式 */
+.banner-text p {
+    font-size: 18px; /* 字体大小 */
+    color: #666; /* 字体颜色 */
+    margin-bottom: 25px; /* 底部外边距 */
+}
+
+/* 横幅图片区域样式 */
+.banner-image {
+    flex: 1; /* 占据剩余空间 */
+    border-radius: 8px; /* 圆角 */
+    overflow: hidden; /* 超出部分隐藏，保持圆角效果 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+/* 横幅图片样式 */
+.banner-image img {
+    width: 100%; /* 宽度100% */
+    height: auto; /* 高度自动 */
+    display: block; /* 块级元素 */
+    transition: transform 0.5s; /* 变换过渡效果 */
+}
+
+/* 横幅图片悬停效果 */
+.banner-image img:hover {
+    transform: scale(1.05); /* 悬停时放大1.05倍 */
+}

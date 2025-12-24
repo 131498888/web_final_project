@@ -1,0 +1,19 @@
+/*
+* footer.css - 页脚样式
+* 作用：设置页面底部区域的样式
+*/
+
+/* 页脚整体样式 */
+.footer {
+    background-color: #333; /* 深灰色背景 */
+    color: #ddd; /* 浅灰色文字 */
+    padding: 30px 0; /* 上下内边距 */
+    text-align: center; /* 文字居中 */
+    margin-top: 50px; /* 顶部外边距 */
+}
+
+/* 页脚段落样式 */
+.footer p {
+    margin: 10px 0; /* 上下外边距 */
+    font-size: 14px; /* 字体大小 */
+}

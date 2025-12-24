@@ -1,0 +1,48 @@
+/* 
+* reset.css - 重置和基础样式
+* 作用：重置所有浏览器的默认样式，确保在不同浏览器中显示一致
+*/
+
+/* 通配符选择器，选中所有元素 */
+* {
+    /* 清除所有元素的内外边距 */
+    margin: 0;
+    padding: 0;
+    /* 设置盒模型为border-box，使元素的宽度包括内边距和边框 */
+    box-sizing: border-box;
+    /* 设置字体 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 设置整个页面的基础样式 */
+body {
+    background-color: #f8f9fa; /* 背景颜色 */
+    color: #333; /* 文字颜色 */
+    line-height: 1.6; /* 行高 */
+}
+
+/* 容器类，用于限制内容宽度并居中 */
+.container {
+    width: 100%; /* 宽度100% */
+    max-width: 1200px; /* 最大宽度1200px */
+    margin: 0 auto; /* 上下边距0，左右自动（居中） */
+    padding: 0 20px; /* 左右内边距20px */
+}
+
+/* 基础按钮样式 */
+.btn {
+    background-color: #4a6cf7; /* 按钮背景色 */
+    color: white; /* 按钮文字颜色 */
+    border: none; /* 去掉边框 */
+    padding: 12px 24px; /* 内边距 */
+    border-radius: 4px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时变为手型 */
+    font-size: 16px; /* 字体大小 */
+    font-weight: 600; /* 字体粗细 */
+    transition: background-color 0.3s; /* 背景色过渡效果 */
+}
+
+/* 鼠标悬停时的按钮样式 */
+.btn:hover {
+    background-color: #3a5ce5; /* 悬停时背景色变深 */
+}

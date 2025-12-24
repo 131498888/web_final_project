@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- 表示文档语言是简体中文，帮助浏览器和搜索引擎理解页面内容。 -->
+<head>
+    <meta charset="UTF-8"> 
+    <!-- UTF-8可以显示几乎所有语言的字符，包括中文、英文等，避免出现乱码。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>简单购物网站</title>
+    
+    <!-- 引入字体图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 引入CSS样式文件 -->
+    <!-- 重置样式和基础样式 -->
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- rel="stylesheet" 表示这是一个样式表。 链接到重置样式表，清除浏览器默认样式，确保页面在不同浏览器中显示一致。 -->
+   
+    <!-- 顶部导航栏样式 -->
+    <link rel="stylesheet" href="css/header.css">
+    <!-- 横幅区域样式 -->
+    <link rel="stylesheet" href="css/banner.css">
+    <!-- 商品区域样式 -->
+    <link rel="stylesheet" href="css/products.css">
+    <!-- 购物车样式 -->
+    <link rel="stylesheet" href="css/cart.css">
+    <!-- 页脚样式 -->
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- 通知样式 -->
+    <link rel="stylesheet" href="css/notification.css">
+    <!-- 响应式设计样式 -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">  
+    <!-- class="header" 给这个元素添加CSS类名，用于样式控制 -->
+        <div class="container"> 
+        <!-- 创建一个容器div，通常用于限制内容宽度和居中显示。 -->
+            <div class="logo">
+                <i class="fas fa-shopping-bag"></i>
+                <span>简单购物</span>
+            </div> 
+            <!-- 网站logo区域 -->
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                </ul>
+            </nav>
+            <!-- <nav> HTML5语义化标签，表示导航区域
+                 <ul> 无序列表
+             <li> 列表项
+            <a href="#" class="active"> 链接，#表示当前页面，active类表示当前选中状态 -->
+
+            <div class="header-icons">
+                <!-- 搜索框 -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="输入商品名称搜索...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- 
+                input type="text" 文本输入框
+
+            placeholder 属性显示提示文本
+            id="search-input" 给输入框一个唯一标识符，方便JavaScript操作
+            button 按钮元素，里面包含搜索图标 -->
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <!-- <i class="fas fa-shopping-bag"></i> 使用Font Awesome的购物袋图标 -->
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 作用：<main>是HTML5语义化标签，表示页面的主要内容区域。-->
+
+            <!-- 横幅区域 -->
+            <section class="banner">
+                <div class="banner-text">
+                    <h1>夏日特惠</h1>
+                    <p>精选商品低至5折，限时抢购</p>
+                    <button class="btn">立即购买</button>
+                </div>
+                <!-- 这里插入横幅图片 -->
+                <div class="banner-image">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="夏季促销商品">
+                </div>
+            </section>
+
+            <!-- 商品展示区 -->
+            <section class="products">
+                <h2>热门商品</h2>
+                
+                <!-- 商品筛选按钮 -->
+                <div class="product-filters">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="electronics">电子产品</button>
+                    <button class="filter-btn" data-filter="clothing">服装配饰</button>
+                    <button class="filter-btn" data-filter="books">图书文具</button>
+                </div>
+                
+                <div class="product-grid">
+                    <!-- 商品1 -->
+                    <div class="product-card" data-category="electronics">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="无线耳机">
+                            <span class="product-tag">热卖</span>
+                            <!-- <span class="product-tag">热卖</span> 商品标签 -->
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">无线蓝牙耳机</h3>
+                            <p class="product-desc">高品质音质，降噪功能，续航时间长</p>
+                            <div class="product-price">￥299</div>
+                            <button class="add-to-cart" data-id="1">加入购物车</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 商品2 -->
+                    <div class="product-card" data-category="clothing">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="时尚T恤">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">纯棉时尚T恤</h3>
+                            <p class="product-desc">100%纯棉材质，舒适透气，多种颜色可选</p>
+                            <div class="product-price">￥89</div>
+                            <button class="add-to-cart" data-id="2">加入购物车</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 商品3 -->
+                    <div class="product-card" data-category="electronics">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80" alt="智能手机">
+                            <span class="product-tag">新品</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">智能手机</h3>
+                            <p class="product-desc">高性能处理器，超清摄像头，长续航</p>
+                            <div class="product-price">￥2,999</div>
+                            <button class="add-to-cart" data-id="3">加入购物车</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 商品4 -->
+                    <div class="product-card" data-category="books">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="设计图书">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">网页设计指南</h3>
+                            <p class="product-desc">现代网页设计技巧与最佳实践</p>
+                            <div class="product-price">￥59</div>
+                            <button class="add-to-cart" data-id="4">加入购物车</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 商品5 -->
+                    <div class="product-card" data-category="clothing">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="运动鞋">
+                            <span class="product-tag">特价</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">轻便运动鞋</h3>
+                            <p class="product-desc">舒适缓震，透气设计，适合多种运动</p>
+                            <div class="product-price">￥199 <span class="original-price">￥299</span></div>
+                            <button class="add-to-cart" data-id="5">加入购物车</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 商品6 -->
+                    <div class="product-card" data-category="books">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="烹饪图书">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">美食烹饪全书</h3>
+                            <p class="product-desc">包含100道经典菜谱，详细步骤说明</p>
+                            <div class="product-price">￥78</div>
+                            <button class="add-to-cart" data-id="6">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 购物车侧边栏 -->
+    <aside class="cart-sidebar">
+        <!-- <aside> 表示页面的侧边栏内容，通常与主要内容相关但不是主要内容。 -->
+            
+        <div class="cart-header">
+            <h3>我的购物车</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+            <!-- "cart-header","close-cart"：购物车标题和关闭按钮区域。-->
+
+        <div class="cart-items">
+            <!-- 购物车商品将通过JavaScript动态添加 -->
+             
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>购物车是空的</p>
+            </div>
+        </div>
+        <!--购物车商品列表区域，初始显示空购物车提示。-->
+
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>总计:</span>
+                <span class="total-price">￥0</span>
+            </div>
+            <button class="checkout-btn">去结算</button>
+        </div>
+    </aside>
+    <!-- 购物车底部，显示总价和结算按钮。 -->
+
+
+    
+    <!-- 购物车遮罩层 -->
+    <div class="cart-overlay"></div>
+    <!-- 当购物车打开时，半透明遮罩层覆盖页面其他部分，点击可以关闭购物车。 -->
+
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 25216950103</p>
+            <p>张燕婷</p>
+        </div>
+    </footer>
+            <!-- <footer> HTML5语义化标签，表示页面底部区域。&copy; 是HTML实体，显示版权符号© -->
+
+
+    <!-- 引入JavaScript文件 -->
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
